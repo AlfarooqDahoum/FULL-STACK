@@ -1,24 +1,29 @@
-import Home from './Home'
-import About from './About'
-import Nav from './components/Nav'
+import Navbar from "./components/Nav"
+import Home from "./Home"
 
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-      <Nav />
-      <Routes>
-        <Route 
-        path='/'
-        element={<Home />}
-        />
-        <Route 
-        path='/about'
-        element={<About />}
-        />
-      </Routes>
+        <h1>Todo List</h1>
+        <Navbar />
+        <Routes>
+          <Route
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            path='/'
+            element={<AddTodo />}
+          />
+          <Route
+            // dynamic :id to create custom route
+            path='/'
+            element={<EditTodo />}
+          />
+        </Routes>
+
       </BrowserRouter>
     </div>
   )
